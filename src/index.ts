@@ -1,14 +1,17 @@
 import express from "express";
+import cors from "cors";
 import looger from "./lib/looger";
 import router from "./routes";
+import { dbConnect } from "./database/mongo";
 // Initializations
 const app = express();
-
+dbConnect();
 
 // Settings
 app.set('port', process.env.PORT || 3000);
 
 //Middlewares
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 
