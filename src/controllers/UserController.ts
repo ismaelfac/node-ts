@@ -1,20 +1,16 @@
 import { Request, Response } from "express";
-import UsersSchema from "../models/users";
+import { Controller } from "./Controller";
+import UserSchema, {IUser} from "../models/users";
 
-const index = async (req: Request, res: Response) => {
-    try {
-        res.send(await UsersSchema.find());
-    } catch (e) {
-        console.log(e);
+class UserController {
+
+    public async index(req: Request, res: Response): Promise<void> {
+        try {
+            const UserList: IUser[] = await UserSchema.find();
+            res.send(UserList);
+        } catch (e) {
+            console.log(res, e)
+        } 
     }
 }
-
-const getItem = async (req: Request, res: Response) => {
-    try {
-        res.send({data: 'Usuario Controller'});
-    } catch (error) {
-        console.log(error);
-    }
-}
-
-module.exports = { index, getItem };
+export const userController = new UserController();

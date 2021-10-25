@@ -1,10 +1,12 @@
 import express from "express";
+import * as dotenv from "dotenv";
 import cors from "cors";
 import looger from "./lib/looger";
 import router from "./routes";
 import { dbConnect } from "./database/mongo";
 // Initializations
 const app = express();
+dotenv.config();
 dbConnect();
 
 // Settings

@@ -1,7 +1,7 @@
-import mongoose from 'mongoose';
+import mongoose, {Schema, model} from 'mongoose';
 import bcrypt from 'bcryptjs';
 
-const UsersSchema = new mongoose.Schema(
+export const UserSchema = new Schema(
     {
         personId: {
             type: mongoose.Types.ObjectId, 
@@ -40,14 +40,22 @@ const UsersSchema = new mongoose.Schema(
         versionKey: false
     }
 )
+export interface IUser extends mongoose.Document{
+    _id: String,
+    roles: String,
+    name: String,
+    email: String,
+    avatar: String,
+    isActive: Boolean
+}
 
-UsersSchema.statics.encryptPassword = async (password)  => {
+UserSchema.statics.encryptPassword = async (password)  => {
     const salt = await bcrypt.genSalt(10);
     return await bcrypt.hash(password, salt);
 }
 
-UsersSchema.statics.comparePassword = async (password, receivedPassword) => {
+UserSchema.statics.comparePassword = async (password, receivedPassword) => {
     return await bcrypt.compare(password, receivedPassword);
 }
 
-module.exports = mongoose.model('users', UsersSchema)
+export default model<IUser>('users', UserSchema)
