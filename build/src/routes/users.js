@@ -1,10 +1,12 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-const express_1 = __importDefault(require("express"));
-const router = express_1.default.Router();
-const { index, getItem } = require("../controllers/UserController");
-router.get('/', index);
+const express_1 = require("express");
+const router = (0, express_1.Router)();
+const UserController_1 = require("../controllers/UserController");
+router.get('/', [], UserController_1.userController.index);
+router.get('/:id', [], UserController_1.userController.getItem);
+router.post('/', [], UserController_1.userController.createdItem); //TODO: localhost/users/ ---> lista 
+router.put('/:id', [], UserController_1.userController.updatedItem); //TODO: localhost/users/ ---> lista 
+router.delete('/:id', [], UserController_1.userController.deletedItem); //TODO: localhost/users/ ---> lista 
+router.post('/:id', [], UserController_1.userController.activeUser); //TODO: localhost/users/ ---> lista 
 module.exports = router;

@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Super Administrador",
+        "special":"all",
+        "isActive":true
+    },
+    {
+        "name": "Administrador",
+        "special": "all",
+        "isActive": true
+    },
+    {
+        "name": "Asesor",
+        "special": "",
+        "isActive": true
+    },
+    {
+        "name": "Juridica",
+        "special": "",
+        "isActive": true
+    }
+]

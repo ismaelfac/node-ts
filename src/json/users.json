@@ -1,0 +1,42 @@
+[
+    {
+        "roles": "SUPER ADMINISTRADOR",
+        "name": "ISMAEL LASTRE",
+        "email": "infobd@aliadosinmobiliariossa.com",
+        "password": "BrwQ12-123",
+        "avatar": "/assets/img/01.jpg",
+        "isActive": true
+    },
+    {
+        "roles": "ADMINISTRADOR",
+        "name": "VANESSA DE LAS SALAS",
+        "email": "vdelassalas@aliadosinmobiliariossa.com",
+        "password": "123",
+        "avatar": "/assets/img/01.jpg",
+        "isActive": true
+    },
+    {
+        "roles": "ASESOR",
+        "name": "LOURDES ARROYO",
+        "email": "larroyo@aliadosinmobiliariossa.com",
+        "password": "123",
+        "avatar": "/assets/img/01.jpg",
+        "isActive": true
+    },
+    {
+        "roles": "JURIDICA",
+        "name": "MARTHA LEAL",
+        "email": "martaleal@aliadosinmobiliariossa.com",
+        "password": "123",
+        "avatar": "/assets/img/01.jpg",
+        "isActive": true
+    },
+    {
+        "roles": "JURIDICA",
+        "name": "XYZ S.A.S",
+        "email": "info@xyz.com",
+        "password": "123",
+        "avatar": "/assets/img/01.jpg",
+        "isActive": true
+    }
+]
