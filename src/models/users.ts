@@ -1,7 +1,7 @@
-import mongoose from 'mongoose';
+import mongoose, { model } from 'mongoose';
 import bcrypt from 'bcryptjs';
 
-export const UserSchema = new mongoose.Schema(
+const UserSchema = new mongoose.Schema(
     {
         personId: {
             type: mongoose.Types.ObjectId, 
@@ -58,4 +58,6 @@ UserSchema.statics.comparePassword = async (password: string, receivedPassword: 
     return await bcrypt.compare(password, receivedPassword);
 }
 
-export default mongoose.model<IUser>('users', UserSchema)
+export const User = model<IUser>('users', UserSchema);
+
+export default User;
